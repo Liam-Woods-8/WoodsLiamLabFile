@@ -14,8 +14,11 @@ def _intro_page():
 
 
 try:
+    def _load_lab1():
+        importlib.import_module("lab1")
+
     pages = [
-        st.Page("Intro-to-Streamlit", lambda: _intro_page()),
+        st.Page("lab1.py", _load_lab1),
         st.Page("Lab2.py", _load_lab2),
     ]
 
@@ -32,10 +35,10 @@ try:
 
 except TypeError:
     # Fallback: simple sidebar navigation if st.Page isn't supported.
-    page_names = ["Intro-to-Streamlit", "Lab2.py"]
+    page_names = ["lab1.py", "Lab2.py"]
     default_index = 1 if "Lab2.py" in page_names else 0
     choice = st.sidebar.selectbox("Page", page_names, index=default_index)
-    if choice == "Intro-to-Streamlit":
-        _intro_page()
+    if choice == "lab1.py":
+        _load_lab1()
     elif choice == "Lab2.py":
         _load_lab2()
