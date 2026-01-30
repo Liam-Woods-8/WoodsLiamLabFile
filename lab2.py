@@ -36,7 +36,7 @@ use_advanced_model = st.sidebar.checkbox("Use advanced model")
 
 # Pick model based on checkbox
 # (Lab says mini vs nano as an example; this keeps the required structure.)
-model_to_use = "gpt-5-chat-latest" if use_advanced_model else "gpt-5-chat-latest"
+model_to_use = "gpt-5-chat-latest" if use_advanced_model else "gpt-5-nano"
 
 # Part B: Use Streamlit secrets (no API key text input)
 openai_api_key = st.secrets["OPENAI_API_KEY"]
